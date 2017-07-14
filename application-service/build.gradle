@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+
+    compile project(':data-service')
+    compile('com.vaadin:vaadin-spring-boot-starter')
+    compile ("com.vaadin:vaadin-sass-compiler:${vaadinSassCompilerVersion}")
+    compile "javax.inject:javax.inject:${javaxInjectVersion}"
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "com.vaadin:vaadin-bom:${vaadinBomVersion}"
+    }
+}
+
