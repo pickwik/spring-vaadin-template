@@ -1,0 +1,20 @@
+def rootDir = buildscript.sourceFile.parentFile
+
+apply from: "$rootDir/gradle/idea.gradle"
+
+// artifact-related group and version properties
+group 'v.tsvirko'
+version '1.0'
+
+subprojects {
+
+	apply from: "$rootDir/gradle/versions.gradle"
+	apply from: "$rootDir/gradle/java.gradle"
+
+	// configure repositories
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		jcenter()
+	}
+}

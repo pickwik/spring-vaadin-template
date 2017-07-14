@@ -3,7 +3,7 @@
 !/gradle
 !/data-service
 !/application-service
-!build.gragle
+!build.gradle
 !settings.gradle
 !gradlew
 !gradlew.bat
