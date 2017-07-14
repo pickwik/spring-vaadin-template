@@ -8,3 +8,7 @@
 !gradlew
 !gradlew.bat
 
+
+/application-service/build/
+/data-service/build/
+!/README.md
